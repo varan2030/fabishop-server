@@ -10,15 +10,6 @@ export async function main(event, context) {
       userName: data.name,
       email: data.email,
       phoneNumber: data.phoneNumber,
-      items: [
-        {
-          itemId: data.items.itemId,
-          itemCreatedAt: Date.now,
-          itemPrice: data.items.itemPrice,
-          itemCount: data.items.itemCount,
-          itemTotalAmount: data.items.itemTotalAmount
-        }
-      ],
       createdAt: Date.now()
     }
   };
