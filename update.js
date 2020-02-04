@@ -7,17 +7,17 @@ export async function main(event, context) {
     TableName: process.env.tableName,
     // 'Key' defines the partition key and sort key of the item to be updated
     // - 'userId': Identity Pool identity id of the authenticated user
-    // - 'noteId': path parameter
+    // - 'itemId': path parameter
     Key: {
       userId: event.requestContext.identity.cognitoIdentityId,
-      userName: event.pathParameters.id
+      itemId: event.pathParameters.id
     },
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression
-    UpdateExpression: 'SET userName = :userName, items = :items',
+    UpdateExpression: 'SET content = :content, attachment = :attachment',
     ExpressionAttributeValues: {
-      ':items': data.items || null,
-      ':userName': data.userName || null
+      ':attachment': data.attachment || null,
+      ':content': data.content || null
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you
