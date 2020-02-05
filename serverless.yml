@@ -1,4 +1,4 @@
-service: users-api
+service: fabishop-api
 
 # Create an optimized package for our functions
 package:
