@@ -9,6 +9,7 @@ export async function main(event, context) {
       userId: event.requestContext.identity.cognitoIdentityId,
       userEmail: data.userEmail,
       userName: data.userName,
+      items: data.items,
       createdAt: Date.now(),
     }
   };
