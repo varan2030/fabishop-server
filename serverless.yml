@@ -119,7 +119,8 @@ functions:
     events:
       - http:
           path: redirect
-          method: any
+          method: get
+          cors: true
           authorizer: aws_iam
 # Create our resources with separate CloudFormation templates
 resources:
