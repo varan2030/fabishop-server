@@ -11,12 +11,6 @@ export async function main(event, context) {
       userEmail: data.userEmail,
       userName: data.userName,
       createdAt: Date.now(),
-      items: [
-        {
-          itemId: uuid.v1(),
-          itemPrice: data.price
-        }
-      ]
     }
   };
 
