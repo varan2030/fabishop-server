@@ -9,7 +9,7 @@ export async function main(event, context) {
     Item: {
       userId: event.requestContext.identity.cognitoIdentityId,
       userEmail: data.userEmail,
-      userNamr: data.userName,
+      userName: data.userName,
       createdAt: Date.now(),
       items: [
         {
