@@ -7,9 +7,9 @@ export async function main(event, context) {
     TableName: process.env.tableName,
     Item: {
       userId: event.requestContext.identity.cognitoIdentityId,
+      userEmail: data.userEmail,
       userName: data.userName,
-      itemId: uuid.v1(),
-      createdAt: Date.now()
+      createdAt: Date.now(),
     }
   };
 
