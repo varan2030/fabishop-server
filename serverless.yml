@@ -43,7 +43,7 @@ provider:
       # Restrict our IAM role permissions to
       # the specific table for the stage
       Resource:
-        - 'Fn::GetAtt': [UsersTable, Arn]
+        - 'Fn::GetAtt': [UserTable, Arn]
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
