@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "react-stripe-elements": "^6.0.1",
+    "serverless-cognito-add-custom-attributes": "^0.3.0",
     "stripe": "^7.15.0",
     "uuid": "^3.3.3"
   }

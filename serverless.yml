@@ -8,6 +8,7 @@ plugins:
   - serverless-bundle # Package our functions with Webpack
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
+  - serverless-cognito-add-custom-attributes
 
 custom:
   # Our stage is based on what is passed in when running serverless
@@ -15,6 +16,17 @@ custom:
   stage: ${opt:stage, self:provider.stage}
   # Set the table name here so we can use it while testing locally
   tableName: ${self:custom.stage}-user
+
+  CognitoAddCustomAttributes: 
+    CognitoUserPoolIdOutputKey: "CognitoUserPoolApplicationUserPoolId"              # The key of the outputted UserPool Ref 
+    CognitoUserPoolClientIdOutputKey: "CognitoUserPoolApplicationUserPoolClientId"  # The key of the outputted UserPoolClient Ref
+    CustomAttributes: 
+      - 
+        AttributeDataType: String
+        DeveloperOnlyAttribute: False
+        Mutable: True
+        Name: "userName" # this will end up being custom:another
+        Required: False
 
 provider:
   name: aws
