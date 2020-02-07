@@ -18,14 +18,14 @@ custom:
   tableName: ${self:custom.stage}-user
 
   CognitoAddCustomAttributes: 
-    CognitoUserPoolIdOutputKey: "CognitoUserPoolApplicationUserPoolId"              # The key of the outputted UserPool Ref 
-    CognitoUserPoolClientIdOutputKey: "CognitoUserPoolApplicationUserPoolClientId"  # The key of the outputted UserPoolClient Ref
-    CustomAttributes: 
-      - 
+    CognitoUserPoolIdOutputKey: "UserPool Output Key as a String"
+  CognitoUserPoolClientIdOutputKey: "UserPoolClient Output Key as a String"
+  CustomAttributes:
+    -
         AttributeDataType: String
         DeveloperOnlyAttribute: False
         Mutable: True
-        Name: "userName" # this will end up being custom:another
+        Name: "userName"
         Required: False
 
 provider:
