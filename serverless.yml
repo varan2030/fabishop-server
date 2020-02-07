@@ -17,17 +17,6 @@ custom:
   # Set the table name here so we can use it while testing locally
   tableName: ${self:custom.stage}-user
 
-  CognitoAddCustomAttributes: 
-    CognitoUserPoolIdOutputKey: "UserPool Output Key as a String"
-    CognitoUserPoolClientIdOutputKey: "UserPoolClient Output Key as a String"
-    CustomAttributes:
-      -
-        AttributeDataType: String
-        DeveloperOnlyAttribute: False
-        Mutable: True
-        Name: "userName"
-        Required: False
-
 provider:
   name: aws
   runtime: nodejs10.x
